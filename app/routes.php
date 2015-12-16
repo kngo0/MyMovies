@@ -8,16 +8,16 @@ $app->get('/', function () use ($app) {
 })->bind('home');
 
 // Détails sur un film
-$app->get('/film/{id}', function($id) use ($app) {
-    $film = $app['dao.film']->find($id);
-    return $app['twig']->render('film.html.twig', array('film' => $film));
-})->bind('film');
+$app->get('/movie/{id}', function($id) use ($app) {
+    $movie = $app['dao.movie']->find($id);
+    return $app['twig']->render('film.html.twig', array('movie' => $film));
+})->bind('movie');
 
 // Liste de tous les films
-$app->get('/film/', function() use ($app) {
-    $medicaments = $app['dao.film']->findAll();
-    return $app['twig']->render('films.html.twig', array('films' => $films));
-})->bind('films');
+$app->get('/movie/', function() use ($app) {
+    $movies = $app['dao.movie']->findAll();
+    return $app['twig']->render('films.html.twig', array('movies' => $films));
+})->bind('movies');
 
 
 
